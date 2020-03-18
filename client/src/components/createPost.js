@@ -1,18 +1,18 @@
-import React, { useEffect } from "react"
+import React, { useState } from "react"
 import { usePosts } from "../hooks"
 
 export default props => {
   const [name, setName] = useState("")
   const [desc, setDesc] = useState("")
-}
 
-const { create } = usePosts()
+  const { create } = usePosts()
 
-function handleSubmit(e) {
-  e.preventDefault()
-  create(props.match.params.slug, name, desc).then(id => {
-    props.history.push("/posting/" + id)
-  })
+  function handleSubmit(e) {
+    e.preventDefault()
+    create(props.match.params.slug, name, desc).then(id => {
+      props.history.push("/posting/" + id)
+    })
+  }
 
   return (
     <div>

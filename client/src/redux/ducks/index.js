@@ -1,2 +1,2 @@
-export { default as catState } from "./categories"
-export { default as postState } from "./posts"
+export { default as catState } from "./categories/catIndex"
+export { default as postState } from "./posts/postsIndex"

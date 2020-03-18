@@ -4,7 +4,7 @@ const conn = require("../db")
 
 router.post("/post", (req, res, next) => {
   const getSQL = `SELECT id FROM categories WHERE slug = ?`
-  const insertSql = `INSERT INTO posts (name, posting, category_id) VALUES (?, ?, ?)`
+  const insertSql = `INSERT INTO posts (id, name, parent_id) VALUES (?, ?, ?)`
   conn.query(getSQL, [req.body.slug], (err, results, fields) => {
     const catId = results[0].catId
     conn.query(

@@ -1,0 +1,8 @@
+{
+  "db": {
+    "host": "localhost",
+    "user": "BG_Ryan",
+    "password": "mrnewvegas",
+    "database": "bald-guy-list"
+  }
+}

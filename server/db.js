@@ -1,15 +1,12 @@
 const mysql = require("mysql")
-const pool = mysql.createPool({
+const config = require("config")
+
+const db = mysql.createPool({
   connectionLimit: 10,
-  host: "localhost",
-  user: "",
-  password: "",
-  database: ""
+  host: config.get("db.host"),
+  user: config.get("db.user"),
+  password: config.get("db.password"),
+  database: config.get("db.database")
 })
 
-// pool.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-//   if (error) throw error;
-//   console.log('The solution is: ', results[0].solution);
-// });
-
-module.exports = pool
+module.exports = db

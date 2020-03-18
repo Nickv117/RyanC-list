@@ -24,7 +24,7 @@ export default props => {
               </h4>
               <div className="sub">
                 {parent.sub.map(child => (
-                  <Link key={"child=cat-" + child.id} to={"/" + child.slug}>
+                  <Link key={"child-cat-" + child.id} to={"/" + child.slug}>
                     {child.name}
                   </Link>
                 ))}
